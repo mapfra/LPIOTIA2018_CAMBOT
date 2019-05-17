@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">-->
+
+   <!-- logo du site-->
+    <link rel="shortcut icon" href="img/logo.png" width="10px" height="5px" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+    <title>CAMBOT</title>
+</head>
+
+<body>
+
+<!-- video de fond d'ecran -->
+
+<video class="video-intro" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg
+https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline autoplay muted loop>
+<source src="https://mdbootstrap.com/img/video/Lines-min.mp4" type="video/mp4">
+</video>
+    
+  
+    <div class="app"></div>
+
+<div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" width="100px" height="50px"></a>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav"></div>
+        </div>
+    </nav>
+  <div class="row">
+    <div class="col-lg-3 col-md-2 col-sm-3">
+      
+    </div>
+    <div class=" form col-lg-6 col-md-8 col-sm-6">
+        <br><br>
+        <p style="position:center; font-size: 2em; color:white; "> Connexion CamBot</p>
+         <br><br>
+       <form method="POST" action="">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="pseudo" name="pseudo" value="" placeholder="Pseudo"><br>
+                    <input type="password" class="form-control" id ="mdp" name="mdp" value="" placeholder="Mot de passe"><br>
+                    
+                </div>
+         </form>
+
+         <!-- button submit connexion-->
+
+         <button type="submit" onclick="validateForm();" class="btn btn-primary" name="send" value=""> CONNEXION </button>
+         <div id="status" class="alert alert-danger" role="alert"></div>
+    </div>
+    <div class="col-lg-3 col-md-2 col-sm-3">
+      
+    </div>
+    
+
+     
+  </div>
+</div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+
+    <!-- script javascript du site web -->
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">-->
+    <link rel="shortcut icon" href="img/logo.png" width="10px" height="5px" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+    <title>CAMBOT</title>
+</head>
+
+<body>
+
+<video class="video-intro" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg
+https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline autoplay muted loop>
+<source src="https://mdbootstrap.com/img/video/Lines-min.mp4" type="video/mp4">
+</video>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" width="100px" height="50px"></a>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav"></div>
+        </div>
+    </nav>
+    <div class="app"></div>
+
+<div class="container">
+  <div class="row">
+   
+    <div class=" video form col-lg-12 col-md-12 col-sm-12">
+        <br><br> 
+        <img id="img_cam1" style="height:360px; width:700px;">
+        <!--<iframe src="http://10.0.4.124/html/" width="700px" height="360px" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"frameborder="0" allowfullscreen></iframe>-->
+
+    </div> 
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+             <div class="boutonMobil" style="background-color:transparent;">
+            <table style="background-color: ">
+                <tr>
+                    <td></td>
+                    <td><button class="button" style="background-color:#6292A9" id="avancer" onClick="avancer()" ><img width="50px" height="50px" title="avancer" src="img/btn/avancer.png" /></button></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><button class="button" style="background-color:#6292A9" id="gauche" onClick="gauche()" title="gauche"><img width="50px" height="50px" src="img/btn/gauche.png" /></button></td>
+
+                    <td><button class="button" style="background-color:#6292A9" id="tourner" onClick="tourner()" title="tourner"><img width="50px" height="50px" src="img/btn/tourner.png" /></button></td>
+
+                    <td><button class="button" style="background-color:#6292A9" id="droite" onClick="droite()"title="droite"><img width="50px" height="50px" src="img/btn/droite.png" /></button></td>
+                    
+                </tr>
+                <tr>
+                <td></td>
+                    <td><button class="button" style="background-color:#6292A9" id="reculer" onClick="reculer()" title="reculer"><img width="50px" height="50px"  src="img/btn/reculer.png" /></button></td>
+                    <td></td>
+                </tr>
+            </table>
+            <table>
+            <tr>
+                
+                <td><button class="button" style="background-color:#6292A9" id="pause" onClick="pause()" title="pause"><img width="50px" height="50px" src="img/btn/pause.png" /></button></td>    
+                <td><button class="button" style="background-color:#6292A9" id="image_button" onClick="play()" title="enregistrer"><img width="50px" height="50px" src="img/btn/play.png" /></button></td>    
+            </tr>
+            </table><br><a href="http://10.0.4.124/html/preview.php" title=""><button class="deconexion btn btn-primary" type="button">Mes Enregistrements</button></a>
+
+
+            <button id="deconnexion" onclick="deconnexion();" class="deconexion btn btn-primary" type="button">Déconnexion</button>
+          </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
